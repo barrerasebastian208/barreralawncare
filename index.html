@@ -418,57 +418,61 @@
       background: rgba(7,11,20,.35);
     }
 
-    @media (max-width: 980px){
-      .ba-row-gallery,
-      .grid2{
-        grid-template-columns: 1fr;
-      }
-    }
+   @media (max-width: 980px){
+  .ba-row-gallery,
+  .grid2{
+    grid-template-columns: 1fr;
+  }
+}
 
-    @media (max-width: 880px){
-      .hero,
-      .grid3,
-      .split{
-        grid-template-columns: 1fr;
-      }
+@media (max-width: 880px){
+  .hero,
+  .grid3,
+  .split{
+    grid-template-columns: 1fr;
+  }
 
-    @media (max-width: 768px){
+  .nav{
+    border-radius:24px;
+    align-items:flex-start;
+  }
+
+  .navlinks{
+    display:none;
+  }
+
+  .nav-actions{
+    width:100%;
+  }
+
+  .ba-pair{
+    grid-template-columns: 1fr;
+  }
+
+  .ba-shot img{
+    height:190px;
+  }
+}
+
+@media (max-width: 768px){
   .bg-parallax{
-    position: absolute;
-    inset: 0;
-    transform: none !important;
-    will-change: auto;
-    filter: none;
-    opacity: 0.35;
-    background-position: center top;
+    position:absolute;
+    inset:0;
+    transform:none !important;
+    will-change:auto;
+    filter:none;
+    opacity:0.35;
+    background-position:center top;
   }
-    
+
   .bg-overlay{
-    background:
-      linear-gradient(180deg, rgba(7,11,20,.72) 0%, rgba(7,11,20,.82) 100%);
+    background: linear-gradient(
+      180deg,
+      rgba(7,11,20,.72) 0%,
+      rgba(7,11,20,.82) 100%
+    );
   }
-}     
-      .nav{
-        border-radius:24px;
-        align-items:flex-start;
-      }
-
-      .navlinks{
-        display:none;
-      }
-
-      .nav-actions{
-        width:100%;
-      }
-
-      .ba-pair{
-        grid-template-columns: 1fr;
-      }
-
-      .ba-shot img{
-        height:190px;
-      }
-    }
+}
   </style>
 </head>
 
@@ -588,19 +592,19 @@
           <div class="ba-row-gallery">
             <div class="ba-pair">
               <div class="ba-shot">
-                <img src="after_mow.jpg" alt="Mowing result 1">
+                <img src="after_mow.jpg" alt="Mowing result 1" loading="lazy">
               </div>
               <div class="ba-shot">
-                <img src="after_mow2.jpg" alt="Mowing result 2">
+                <img src="after_mow2.jpg" alt="Mowing result 2" loading="lazy">
               </div>
             </div>
 
             <div class="ba-pair">
               <div class="ba-shot">
-                <img src="after_mow3.jpg" alt="Edging result 1">
+                <img src="after_mow3.jpg" alt="Edging result 1" loading="lazy">
               </div>
               <div class="ba-shot">
-                <img src="after_mow4.jpg" alt="Edging result 2">
+                <img src="after_mow4.jpg" alt="Edging result 2" loading="lazy">
               </div>
             </div>
           </div>
@@ -613,22 +617,22 @@
           <div class="ba-row-gallery">
             <div class="ba-pair">
               <div class="ba-shot">
-                <img src="beforeweeds_2.jpg" alt="Before weeds cleanup">
+                <img src="beforeweeds_2.jpg" alt="Before weeds cleanup" loading="lazy">
                 <div class="ba-label">Before</div>
               </div>
               <div class="ba-shot">
-                <img src="afterweeds_2.jpg" alt="After weeds cleanup">
+                <img src="afterweeds_2.jpg" alt="After weeds cleanup" loading="lazy">
                 <div class="ba-label">After</div>
               </div>
             </div>
 
             <div class="ba-pair">
               <div class="ba-shot">
-                <img src="IMG_beforeweeds.jpg" alt="Before bed cleanup">
+                <img src="IMG_beforeweeds.jpg" alt="Before bed cleanup" loading="lazy">
                 <div class="ba-label">Before</div>
               </div>
               <div class="ba-shot">
-                <img src="after_weeds.jpg" alt="After bed cleanup">
+                <img src="after_weeds.jpg" alt="After bed cleanup" loading="lazy">
                 <div class="ba-label">After</div>
               </div>
             </div>
@@ -642,22 +646,22 @@
           <div class="ba-row-gallery">
             <div class="ba-pair">
               <div class="ba-shot">
-                <img src="before_bushtrim.jpg" alt="Before bush trimming">
+                <img src="before_bushtrim.jpg" alt="Before bush trimming" loading="lazy">
                 <div class="ba-label">Before</div>
               </div>
               <div class="ba-shot">
-                <img src="after_bushtrim.jpg" alt="After bush trimming">
+                <img src="after_bushtrim.jpg" alt="After bush trimming" loading="lazy">
                 <div class="ba-label">After</div>
               </div>
             </div>
 
             <div class="ba-pair">
               <div class="ba-shot">
-                <img src="before_bushtrim2.jpg" alt="Before shrub trimming">
+                <img src="before_bushtrim2.jpg" alt="Before shrub trimming" loading="lazy">
                 <div class="ba-label">Before</div>
               </div>
               <div class="ba-shot">
-                <img src="after_bushtrim2.jpg" alt="After shrub trimming">
+                <img src="after_bushtrim2.jpg" alt="After shrub trimming" loading="lazy">
                 <div class="ba-label">After</div>
               </div>
             </div>
@@ -796,3 +800,4 @@
 </body>
 
 </html>
+
