@@ -432,6 +432,22 @@
         grid-template-columns: 1fr;
       }
 
+    @media (max-width: 768px){
+  .bg-parallax{
+    position: absolute;
+    inset: 0;
+    transform: none !important;
+    will-change: auto;
+    filter: none;
+    opacity: 0.35;
+    background-position: center top;
+  }
+    
+  .bg-overlay{
+    background:
+      linear-gradient(180deg, rgba(7,11,20,.72) 0%, rgba(7,11,20,.82) 100%);
+  }
+}     
       .nav{
         border-radius:24px;
         align-items:flex-start;
@@ -733,49 +749,50 @@
   </div>
 
   <script>
-    // Expand image on click
-    document.querySelectorAll(".ba-shot img").forEach(img => {
-      img.addEventListener("click", () => {
-        const overlay = document.createElement("div");
-        overlay.style.position = "fixed";
-        overlay.style.top = "0";
-        overlay.style.left = "0";
-        overlay.style.width = "100%";
-        overlay.style.height = "100%";
-        overlay.style.background = "rgba(0,0,0,0.9)";
-        overlay.style.display = "flex";
-        overlay.style.alignItems = "center";
-        overlay.style.justifyContent = "center";
-        overlay.style.zIndex = "9999";
-        overlay.style.padding = "20px";
+  // Expand image on click
+  document.querySelectorAll(".ba-shot img").forEach(img => {
+    img.addEventListener("click", () => {
+      const overlay = document.createElement("div");
+      overlay.style.position = "fixed";
+      overlay.style.top = "0";
+      overlay.style.left = "0";
+      overlay.style.width = "100%";
+      overlay.style.height = "100%";
+      overlay.style.background = "rgba(0,0,0,0.9)";
+      overlay.style.display = "flex";
+      overlay.style.alignItems = "center";
+      overlay.style.justifyContent = "center";
+      overlay.style.zIndex = "9999";
+      overlay.style.padding = "20px";
 
-        const fullImg = document.createElement("img");
-        fullImg.src = img.src;
-        fullImg.style.maxWidth = "95%";
-        fullImg.style.maxHeight = "95%";
-        fullImg.style.borderRadius = "12px";
-        fullImg.style.boxShadow = "0 20px 60px rgba(0,0,0,.5)";
+      const fullImg = document.createElement("img");
+      fullImg.src = img.src;
+      fullImg.style.maxWidth = "95%";
+      fullImg.style.maxHeight = "95%";
+      fullImg.style.borderRadius = "12px";
+      fullImg.style.boxShadow = "0 20px 60px rgba(0,0,0,.5)";
 
-        overlay.appendChild(fullImg);
-        overlay.addEventListener("click", () => overlay.remove());
-        document.body.appendChild(overlay);
-      });
+      overlay.appendChild(fullImg);
+      overlay.addEventListener("click", () => overlay.remove());
+      document.body.appendChild(overlay);
     });
+  });
 
-    // Footer year
-    document.getElementById("year").textContent = new Date().getFullYear();
+  document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Parallax
-    const bg = document.querySelector(".bg-parallax");
+  const bg = document.querySelector(".bg-parallax");
+  const isMobile = window.innerWidth <= 768;
+
+  if (!isMobile && bg) {
     const speed = 0.25;
-
-    function onScroll(){
+    function onScroll() {
       const y = window.scrollY || 0;
       bg.style.transform = `translate3d(0, ${-y * speed}px, 0) scale(1.03)`;
     }
-
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-  </script>
+  }
+</script>
 </body>
+
 </html>
