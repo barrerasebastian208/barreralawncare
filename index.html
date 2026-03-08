@@ -456,21 +456,45 @@
 
 @media (max-width: 768px){
   .bg-parallax{
-    position:absolute;
+    position:fixed;
     inset:0;
     transform:none !important;
     will-change:auto;
     filter:none;
-    opacity:0.35;
-    background-position:center top;
+    opacity:0.55;
+    background-position:center center;
+    background-size:cover;
   }
 
   .bg-overlay{
     background: linear-gradient(
       180deg,
-      rgba(7,11,20,.72) 0%,
-      rgba(7,11,20,.82) 100%
+      rgba(7,11,20,.45) 0%,
+      rgba(7,11,20,.58) 100%
     );
+  }
+
+  .wrap{
+    padding:14px;
+  }
+
+  .card{
+    padding:16px;
+  }
+
+  .actions{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:8px;
+  }
+
+  .actions .btn,
+  .split .btn{
+    width:100%;
+  }
+
+  .kpis{
+    grid-template-columns:1fr;
   }
 }
   </style>
@@ -785,19 +809,28 @@
   document.getElementById("year").textContent = new Date().getFullYear();
 
   const bg = document.querySelector(".bg-parallax");
-  const isMobile = window.innerWidth <= 768;
 
-  if (!isMobile && bg) {
+  function enableDesktopParallax() {
+    if (!bg) return;
     const speed = 0.25;
+
     function onScroll() {
       const y = window.scrollY || 0;
       bg.style.transform = `translate3d(0, ${-y * speed}px, 0) scale(1.03)`;
     }
+
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
+  }
+
+  if (window.innerWidth > 768) {
+    enableDesktopParallax();
+  } else if (bg) {
+    bg.style.transform = "none";
   }
 </script>
 </body>
 
 </html>
+
 
