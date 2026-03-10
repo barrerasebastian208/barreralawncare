@@ -21,21 +21,32 @@
 
     *{box-sizing:border-box}
 
-    .bg-parallax{
-      position: fixed;
-      inset: -4%;
-      z-index: -2;
-      background-image: url("mowing-bg.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      transform: translate3d(0,0,0) scale(1.03);
-      will-change: transform;
-      filter: blur(1px) saturate(1.08) brightness(1.08) contrast(1.06);
-      opacity: 0.95;
-    }
+   .bg-parallax{
+  position: fixed;
 
-    .bg-overlay{
+  top: 17vh;        /* moves entire image down */
+  left: -4%;
+  width: 108%;
+  height: 108%;
+
+  z-index: -2;
+
+  background-image: url("grass-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transform: translate3d(0,0,0) scale(1.03);
+  will-change: transform;
+
+  filter: blur(1px) saturate(1.08) brightness(1.08) contrast(1.06);
+  opacity: 0.95;
+}
+
+
+
+
+ .bg-overlay{
       position: fixed;
       inset: 0;
       z-index: -1;
@@ -45,7 +56,10 @@
         linear-gradient(180deg, rgba(7,11,20,.35) 0%, rgba(7,11,20,.45) 55%, rgba(7,11,20,.40) 100%);
     }
 
-    body{
+
+
+
+       body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       color:var(--text);
@@ -62,20 +76,20 @@
     }
 
     .nav{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:14px;
-      padding:14px 16px;
-      border:1px solid var(--stroke);
-      border-radius:999px;
-      background: rgba(18,26,43,.75);
-      backdrop-filter: blur(10px);
-      box-shadow: var(--shadow);
-      position: sticky;
-      top: 16px;
-      z-index: 50;
-    }
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  padding:14px 16px;
+  border:1px solid var(--stroke);
+  border-radius:999px;
+  background: rgba(18,26,43,.75);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 16px;
+  z-index: 50;
+}
 
     .brand{
       display:flex;
@@ -451,87 +465,144 @@
       border-top:1px solid var(--stroke);
       background: rgba(7,11,20,.35);
     }
+	
+    /* Fix navbar covering anchor sections */
+#services,
+#serviceareas,
+#beforeafter,
+#reviews,
+#pricing,
+#contact{
+  scroll-margin-top:110px;
+}
+
 
     @media (max-width: 980px){
-      .ba-row-gallery,
-      .grid2,
-      .reviews-grid{
-        grid-template-columns: 1fr;
-      }
-    }
+  .ba-row-gallery,
+  .grid2,
+  .reviews-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .reviews-grid{
+    gap:12px;
+  }
+
+  .ba-row{
+    padding:16px;
+  }
+}
 
     @media (max-width: 880px){
-      .hero,
-      .grid3,
-      .split{
-        grid-template-columns: 1fr;
-      }
+  .hero,
+  .grid3,
+  .split{
+    grid-template-columns: 1fr;
+  }
 
-      .nav{
-        border-radius:24px;
-        align-items:flex-start;
-      }
+  .nav{
+    border-radius:24px;
+    align-items:flex-start;
+  }
 
-      .navlinks{
-        display:none;
-      }
+  .navlinks{
+    display:none;
+  }
 
-      .nav-actions{
-        width:100%;
-      }
+  .nav-actions{
+    width:100%;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+  }
 
-      .ba-pair{
-        grid-template-columns: 1fr;
-      }
+  .nav-actions .btn{
+    width:100%;
+  }
 
-      .ba-shot img{
-        height:190px;
-      }
-    }
+  .ba-pair{
+    grid-template-columns: 1fr;
+  }
 
-    @media (max-width: 768px){
-      .bg-parallax{
-        position:fixed;
-        inset:0;
-        transform:none !important;
-        will-change:auto;
-        filter:none;
-        opacity:0.55;
-        background-position:center center;
-        background-size:cover;
-      }
+  .ba-shot img{
+    height:190px;
+  }
+}
 
-      .bg-overlay{
-        background: linear-gradient(
-          180deg,
-          rgba(7,11,20,.45) 0%,
-          rgba(7,11,20,.58) 100%
-        );
-      }
+   @media (max-width: 768px){
+  .bg-parallax{
+    position: fixed;
+    top: 14vh;
+    left: -4%;
+    width: 108%;
+    height: 108%;
+    z-index: -2;
 
-      .wrap{
-        padding:14px;
-      }
+    background-image: url("grass-bg.jpg");
+    background-size: cover;
+    background-position: center 55%;
+    background-repeat: no-repeat;
 
-      .card{
-        padding:16px;
-      }
+    transform: translate3d(0,0,0) scale(1.01) !important;
+    will-change: auto;
+    filter: blur(1px) saturate(1.05) brightness(1.04) contrast(1.03);
+    opacity: 0.8;
+  }
 
-      .actions{
-        display:grid;
-        grid-template-columns:1fr;
-        gap:8px;
-      }
+  .bg-overlay{
+    background: linear-gradient(
+      180deg,
+      rgba(7,11,20,.50) 0%,
+      rgba(7,11,20,.60) 100%
+    );
+  }
 
-      .actions .btn,
-      .split .btn{
-        width:100%;
-      }
+  .wrap{
+    padding:14px;
+  }
 
-      .kpis{
-        grid-template-columns:1fr;
-      }
-    }
+  .card{
+    padding:16px;
+  }
+
+  .actions{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:8px;
+  }
+
+  .actions .btn,
+  .split .btn{
+    width:100%;
+  }
+
+  .kpis{
+    grid-template-columns:1fr;
+  }
+
+  .nav{
+    gap:10px;
+    padding:12px 14px;
+    top:12px;
+  }
+
+  .brand{
+    gap:8px;
+  }
+
+  .logo{
+    width:38px;
+    height:38px;
+  }
+
+  h1{
+    font-size: clamp(30px, 8vw, 40px);
+  }
+
+  .sub{
+    font-size:15px;
+  }
+}
   </style>
 </head>
 
@@ -552,6 +623,7 @@
       <div class="navlinks">
         <a href="#services">Services</a>
         <a href="#beforeafter">Before/After</a>
+	<a href="#reviews">Reviews</a>
         <a href="#pricing">Pricing</a>
         <a href="#contact">Contact</a>
       </div>
@@ -571,7 +643,7 @@
     <h1>Lawn care built around your needs.</h1>
 
     <p class="sub">
-      Mowing, trimming, cleanups, and bed work done with care and attention to detail. Happy customers. Healthy lawns.
+      Mowing, trimming, cleanups, and bed work done with care. Happy customers. Healthy lawns.
     </p>
 
     <div class="actions">
@@ -611,7 +683,7 @@
 
       <!-- SERVICES -->
       <div class="card">
-        <h2 id="services">Services</h2>
+        <h2 id="services">🛠️ Services</h2>
         <ul class="list">
           <li>
             <span class="dot"></span>
@@ -677,7 +749,7 @@
     <div class="hr"></div>
 
     <section class="card" id="beforeafter" style="margin-top:18px;">
-      <h2>Before & After</h2>
+      <h2>📸 Before & After</h2>
       <p class="muted">Real results from recent jobs. Click any image to expand it.</p>
 
       <div class="ba-grid">
@@ -766,8 +838,8 @@
       </div>
     </section>
 
-    <section class="card" style="margin-top:18px;">
-      <h2>⭐ What Customers Say</h2>
+    <section id="reviews" class="card" style="margin-top:18px;">
+      <h2>⭐ Real Customer Feedback</h2>
       <p class="muted">Messages and feedback shared by past customers.</p>
 
       <div class="reviews-grid">
@@ -782,7 +854,7 @@
         </div>
 
         <div class="review-card">
-          <p>“Looks awesome we really appreciatie it”</p>
+          <p>“Looks awesome we really appreciate it”</p>
           <span class="small">Carlos, Buda</span>
         </div>
 
@@ -807,8 +879,8 @@
 
     <section class="grid3" id="pricing" style="margin-top:18px;">
       <div class="card">
-        <h2>Pricing</h2>
-        <p class="muted">Exact pricing depends on lot size, grass height, cleanup needed, and time spent on labor.</p>
+        <h2>🏷️ Pricing</h2>
+        <p class="muted">Exact pricing depends on yard size, grass height, cleanup needed, and time required for the job.</p>
 
         <div class="pricebox">
           <div class="price">$50+</div>
@@ -835,7 +907,7 @@
       </div>
 
       <div class="card" id="contact">
-        <h2>Contact</h2>
+        <h2>📩 Contact</h2>
         <p class="muted">Text is fastest. If you use the form, we’ll reply as soon as possible.</p>
 
         <form action="https://formspree.io/f/mzdjzavy" method="POST">
@@ -858,7 +930,7 @@
     </section>
 
     <footer>
-      © <span id="year"></span> Barrera Lawn Care • Built simple, clean, and mobile-friendly
+      © <span id="year"></span> Barrera Lawn Care • Built simple, local, and reliable
     </footer>
   </div>
 
@@ -895,24 +967,24 @@
 
     const bg = document.querySelector(".bg-parallax");
 
-    function enableDesktopParallax() {
-      if (!bg) return;
-      const speed = 0.25;
+function enableDesktopParallax() {
+  if (!bg) return;
+  const speed = 0.16;
 
-      function onScroll() {
-        const y = window.scrollY || 0;
-        bg.style.transform = `translate3d(0, ${-y * speed}px, 0) scale(1.03)`;
-      }
+  function onScroll() {
+    const y = window.scrollY || 0;
+    bg.style.transform = `translate3d(0, ${-y * speed}px, 0) scale(1.03)`;
+  }
 
-      onScroll();
-      window.addEventListener("scroll", onScroll, { passive: true });
-    }
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+}
 
-    if (window.innerWidth > 768) {
-      enableDesktopParallax();
-    } else if (bg) {
-      bg.style.transform = "none";
-    }
+if (window.innerWidth > 768) {
+  enableDesktopParallax();
+} else if (bg) {
+  bg.style.transform = "translate3d(0,0,0) scale(1.01)";
+}
   </script>
 </body>
 </html>
