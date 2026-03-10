@@ -532,37 +532,41 @@
    @media (max-width: 768px){
   .bg-parallax{
     position: fixed;
-    top: 14vh;
-    left: -4%;
-    width: 108%;
-    height: 108%;
-    z-index: -2;
-
-    background-image: url("grass-bg.jpg");
-    background-size: cover;
-    background-position: center 55%;
-    background-repeat: no-repeat;
-
-    transform: translate3d(0,0,0) scale(1.01) !important;
+    inset: 0;
+    transform: none !important;
     will-change: auto;
-    filter: blur(1px) saturate(1.05) brightness(1.04) contrast(1.03);
-    opacity: 0.8;
+    filter: none;
+    opacity: 0.55;
+    background-position: center center;
+    background-size: cover;
   }
 
   .bg-overlay{
     background: linear-gradient(
       180deg,
-      rgba(7,11,20,.50) 0%,
-      rgba(7,11,20,.60) 100%
+      rgba(7,11,20,.45) 0%,
+      rgba(7,11,20,.58) 100%
     );
+  }
+
+  .nav{
+    backdrop-filter: none;
+    background: rgba(18,26,43,.92);
+    box-shadow: 0 10px 24px rgba(0,0,0,.22);
+    gap: 10px;
+    padding: 12px 14px;
+    top: 12px;
+  }
+
+  .card{
+    backdrop-filter: none;
+    background: rgba(18,26,43,.88);
+    box-shadow: 0 10px 24px rgba(0,0,0,.22);
+    padding: 16px;
   }
 
   .wrap{
     padding:14px;
-  }
-
-  .card{
-    padding:16px;
   }
 
   .actions{
@@ -580,12 +584,6 @@
     grid-template-columns:1fr;
   }
 
-  .nav{
-    gap:10px;
-    padding:12px 14px;
-    top:12px;
-  }
-
   .brand{
     gap:8px;
   }
@@ -601,6 +599,16 @@
 
   .sub{
     font-size:15px;
+  }
+
+  .ba-shot:hover img{
+    transform:none;
+  }
+
+  .btn:hover{
+    transform:none;
+    background: rgba(255,255,255,.06);
+    border-color: var(--stroke);
   }
 }
   </style>
@@ -988,3 +996,4 @@ if (window.innerWidth > 768) {
   </script>
 </body>
 </html>
+
