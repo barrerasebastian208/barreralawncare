@@ -32,7 +32,7 @@
   z-index: -2;
 
   background-image: url("grass-bg.jpg");
-  background-size: cover;
+  background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
 
@@ -80,15 +80,16 @@
   align-items:center;
   justify-content:space-between;
   gap:14px;
-  padding:14px 16px;
-  border:1px solid var(--stroke);
-  border-radius:999px;
-  background: rgba(18,26,43,.75);
+  padding:18px 20px;
+  border-bottom:1px solid var(--stroke);
+  border-radius:0;
+  background: rgba(18,26,43,.92);
   backdrop-filter: blur(10px);
   box-shadow: var(--shadow);
   position: sticky;
-  top: 16px;
-  z-index: 50;
+  top:0;
+  width:100%;
+  z-index:50;
 }
 
     .brand{
@@ -501,9 +502,9 @@
   }
 
   .nav{
-    border-radius:24px;
-    align-items:flex-start;
-  }
+  border-radius:0;
+  align-items:flex-start;
+}
 
   .navlinks{
     display:none;
@@ -550,13 +551,14 @@
   }
 
   .nav{
-    backdrop-filter: none;
-    background: rgba(18,26,43,.92);
-    box-shadow: 0 10px 24px rgba(0,0,0,.22);
-    gap: 10px;
-    padding: 12px 14px;
-    top: 12px;
-  }
+  backdrop-filter: none;
+  background: rgba(18,26,43,.92);
+  box-shadow: 0 10px 24px rgba(0,0,0,.22);
+  gap: 10px;
+  padding: 12px 14px;
+  top: 0;
+  border-radius:0;
+}
 
   .card{
     backdrop-filter: none;
@@ -621,7 +623,7 @@
   <div class="bg-parallax" aria-hidden="true"></div>
   <div class="bg-overlay" aria-hidden="true"></div>
 
-  <div class="wrap">
+  
     <div class="nav">
       <div class="brand">
         <div class="logo">BLC</div>
@@ -644,7 +646,7 @@
         <a class="btn primary" href="#contact">Get a Quote</a>
       </div>
     </div>
-
+<div class="wrap">
     
 	<section class="hero">
   <!-- LEFT HERO CARD -->
@@ -938,7 +940,8 @@
 		
 
 <p class="small">
-Business hours: Mon-Fri • 9AM–5PM;  Fri-Sun • 8AM-7PM
+Business hours:<br>
+Mon-Fri • 9AM–5PM;  Fri-Sun • 8AM-7PM
 </p>
       </div>
     </section>
@@ -1002,7 +1005,6 @@ if (window.innerWidth > 768) {
   </script>
 </body>
 </html>
-
 
 
 
